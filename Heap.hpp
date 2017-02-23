@@ -11,4 +11,6 @@ class Heap{
   private:
     int *nodes;
     int size;  
+    void sortUp(int i);
+    void sortDown(int i);
 };

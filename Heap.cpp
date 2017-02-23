@@ -2,9 +2,9 @@
 #include "Heap.hpp"
 
 Heap::Heap(){
-    size = 128;
-    nodes = new int[size];
-    memset(nodes, 0, size);
+    size = 0; //Number of (non-zero) nodes, not the size of the array.
+    nodes = new int[128];
+    memset(nodes, 0, sizeof(nodes));
 }
 
 Heap::~Heap(){
@@ -26,5 +26,19 @@ int Heap::pop(){
 }
 
 void Heap::insert(int num){
-    //Insert!
+    if(size < sizeof(nodes)){
+        nodes[size] = num;
+        sortUp(size++);
+    }
+    else{
+        //Make a bigger array!
+    }
+}
+
+void Heap::sortUp(int i){
+    
+}
+
+void Heap::sortDown(int i){
+    
 }
