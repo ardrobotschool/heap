@@ -6,8 +6,9 @@ class Heap{
     ~Heap();
     int peek();
     int pop();
-    void insert();
+    void insert(int num);
     bool isEmpty();
   private:
-    int *nodes = NULL;
+    int *nodes;
+    int size;  
 };
