@@ -96,7 +96,12 @@ void Heap::print(){
         }
         //Nodes:
         for(int n=0; n < pow(2, l-1); n++){
-            cout << nodes[index++]; // Node
+            if(nodes[index] != 0){
+                cout << nodes[index++]; // Node
+            }
+            else{
+                break;
+            }
             //Spaces between nodes:
             for(int i=0; i < pow(2, numLevels - l + 1) - 1; i++){
                 cout << ' ';
