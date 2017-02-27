@@ -11,7 +11,8 @@ class Heap{
     bool isEmpty();
   private:
     int *nodes;
-    int size;  
+    int count;
+    int size;
     void sortUp(int i);
     void sortDown(int i);
 };
