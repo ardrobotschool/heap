@@ -9,6 +9,7 @@ class Heap{
     int pop();
     void insert(int num);
     bool isEmpty();
+    void print();
   private:
     int *nodes;
     int count;

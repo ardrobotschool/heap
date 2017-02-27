@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Heap.hpp"
+#include <cmath>
 
 using namespace std;
 
@@ -81,5 +82,26 @@ void Heap::sortDown(int i){
         nodes[i] = nodes[maxindex];
         nodes[maxindex] = temp;
         sortDown(maxindex);
+    }
+}
+
+void Heap::print(){
+    //I made it look pretty, but only if the numbers are 1 or 2 digit.
+    int numLevels = ceil(log2(count + 1));
+    int index = 0;
+    for(int l=1; l <= numLevels; l++){
+        //Initial spaces:
+        for(int i=0; i < pow(2, numLevels-l)-1; i++){
+            cout << ' ';
+        }
+        //Nodes:
+        for(int n=0; n < pow(2, l-1); n++){
+            cout << nodes[index++]; // Node
+            //Spaces between nodes:
+            for(int i=0; i < pow(2, numLevels - l + 1) - 1; i++){
+                cout << ' ';
+            }
+        }
+        cout << endl;
     }
 }

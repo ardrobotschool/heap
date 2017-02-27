@@ -9,6 +9,7 @@ int main(){
     for(int i=0; i<sizeof(test)/sizeof(int); i++){
         heap.insert(test[i]);
     }
+    heap.print();
     cout << heap.pop();
     while(!heap.isEmpty()){
         cout << ", " << heap.pop();
