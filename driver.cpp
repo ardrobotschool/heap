@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Heap.hpp"
+#include <fstream>
 
 using namespace std;
 
@@ -31,8 +32,20 @@ int main(){
             populate(heap, list);
         }
         else if(input == '2'){
+            char filename[32];
             cout << "Enter the file name: ";
-            cout << endl;
+            cin >> filename;
+            ifstream stream(filename);
+            if(stream.is_open()){
+                char list[16384];
+                stream.getline(list, 16384, 0);
+                stream.close();
+                populate(heap, list);
+            }
+            else{
+                cout << "Could not open file." << endl;
+                continue;
+            }
         }
         else if (input == 'q'){
             break;
@@ -60,6 +73,11 @@ int main(){
         }
         else{
             cout << "Command not recognized." << endl;
+        }
+        cout << "Would you like to input another list? (y/n) ";
+        cin >> input;
+        if(input != 'y'){
+            break;
         }
     }
     return 0;
