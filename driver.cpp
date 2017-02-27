@@ -1,3 +1,8 @@
+/*
+ * A program that allows a user to sort a list of numbers (which can also be loaded
+ * from a file) using a heap. You can also print out the tree.
+ * Artur Drobot, Feb 2017.
+ */
 #include <iostream>
 #include "Heap.hpp"
 #include <fstream>
